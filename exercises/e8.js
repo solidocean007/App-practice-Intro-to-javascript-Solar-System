@@ -5,9 +5,7 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  const spaceRock = data.planets
-  .filter(planet => planet.moonsCount > 0)    
-  return spaceRock.find(rock => moons[rock] === moonName).name;
+  
 }
 
 // === TEST YOURSELF ===
