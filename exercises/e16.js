@@ -4,10 +4,13 @@
 // Return the year with the greatest number of Asteroids discoveries
 // Return example: 1902
 
-export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
+export function find(array, callback) {
+  for (let item of array) {
+    if (callback(item)) {
+      return item;
+    }
+  }
 }
-
 
 
 // === TEST YOURSELF ===
