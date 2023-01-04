@@ -7,13 +7,10 @@
 - Run ```npm i``` to install dependencies and packages.
 - Start solving the exercises, following the "HOW IT WORKS" section.
 
-## BEFORE YOU START
-Remember, every function must return something.
-
 ## HOW IT WORKS
 - The repo has the "exercises" folder with 16 exercise files (e1.js .. e16.js). Each file includes the task description, a function declared, data imported, and a placeholder for your code.
 - Open e1.js file and start writing functions' code in the "Your code goes here..." placeholder to achieve the goals described.
-- **!!! You can use map(), filter(), and reduce() methods ONLY to iterate through data array/nested arrays. Other methods or loops are NOT allowed.**
+- **!!! NO loops are allowed unless specified.**
 - Once you are done, run the test command ```npm run test-1``` in the command line, where "1" is the current exercise number. This will start the test environment and show the passed and failed tests for the current code you have written.
 - If the test results have all tests passed (no red comments), consider it to be finished successfully, then switch to the next exercise file.
 - If any of the tests fails, refactor the code and run the test command after you've fixed the function. Please, don't switch to the next exercise file until the current one is finished successfully.
