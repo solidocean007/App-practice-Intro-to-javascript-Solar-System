@@ -6,18 +6,18 @@ import { data } from "../data/data";
 
 
 // 1st way
-// export function getGreatestDiscoveryYear(data) {
-//   const s = {};
-//   data.asteroids.map(y => y.discoveryYear)
-//   .map((x) => { 
-//     s[x] = s[x]+ 1 || 1;
-//   });
-//   let k = Object.keys(s);
-//   let v = Object.values(s);
-//   let max = Math.max(...v);
-//   let i = v.findIndex(x => x == max)
-//   return Number(k[i]);
-// }
+export function getGreatestDiscoveryYear(data) {
+  const s = {};
+  data.asteroids.map(y => y.discoveryYear)
+  .map((x) => { 
+    s[x] = s[x]+ 1 || 1;
+  });
+  let k = Object.keys(s);
+  let v = Object.values(s);
+  let max = Math.max(...v);
+  let i = v.findIndex(x => x == max)
+  return Number(k[i]);
+}
 
 
 //2nd way
