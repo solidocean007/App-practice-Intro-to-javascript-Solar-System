@@ -10,6 +10,7 @@ export function find(array, callback) {
       return item;
     }
   }
+  return undefined;
 }
 
 

@@ -6,24 +6,21 @@ import { data } from "../data/data";
 
 // 1st ways
 // export function findPlanetNameByMoon(data, moonName) {
-//   const spaceRock = data.planets
-//   .filter(planet => planet.moonsCount > 0)    
-//   return spaceRock.find(rock => rock.moons.includes(moonName)).name;
+//   return data.planets
+//   .filter(planet => planet.moonsCount)    
+//   .find(rock => rock.moons.includes(moonName)).name;
 // }
 
 // 2nd way
 // export function findPlanetNameByMoon(data, moonName) {
-//   const spaceRock = data.planets
-//   .find(planet => planet.moons.includes(moonName))    
-//   return spaceRock ? spaceRock.name: 'Planet not found';
+//   return data.planets
+//   .find((planet) => planet.moons && planet.moons.includes(moonName)) ?? 'Planet not found';
 // }
 
 //3rd way
 export function findPlanetNameByMoon(data, moonName) {
-  const spaceRock = data.planets
-  .filter(planet => planet.moonsCount > 0)
-  .find(planet => planet.moons.includes(moonName));
-  return spaceRock.name;
+  return data.planets
+    .find(planet => planet.moonsCount > 0 && planet.moons.includes(moonName)).name;
 }
 
 // === TEST YOURSELF ===
