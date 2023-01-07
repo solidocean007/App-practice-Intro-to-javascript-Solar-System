@@ -7,26 +7,45 @@ import { data } from "../data/data";
 export function getGreatestDiscoveryYear(data) {
   // Your code goes here...
   // feel free to import your `maxBy` or `minBy` methods from previous lessons
-    const rockInfo = data.asteroids
-    let asteroidArray = {};
-  for(let item = 0; item < rockInfo.length; item++ ) {
-    let currYear = rockInfo[item].discoveryYear
-    if (!asteroidArray[currYear]) {
-      asteroidArray[currYear] = 0;
+  const rockInfo = data.asteroids
+  .reduce((acc, asteroid) => {
+    if (acc[asteroid.discoveryYear]) {
+      acc[asteroid.discoveryYear]++;
+    } else {
+      acc[asteroid.discoveryYear] = 1;
     }
-    asteroidArray[currYear]++
-  }
-  let max = 0;
-  let mostFrequent = 0;
+    return acc;
+  }, {});
 
-  for(const i in asteroidArray) {
-    if (asteroidArray[i] > max) {
-    max = asteroidArray[i];
-    mostFrequent = i;
+  function maxBy(array, callback) {                  // create a function call maxBy with two parameters
+    let max = array[0];                        // assign max to the first index in the array
+    for(let i = 0; i < array.length; i++) {    // iterate through the length of the array
+      if(callback(array[i]) > callback(max)){              // if the discovery year
+        max = array[i]
+      }
+    }
+    return maxBy(rockInfo, (year) => year.discoveryYear);
   }
 }
-  return Number(mostFrequent);
-}
+
+
+// source: https://www.youtube.com/watch?v=NiLUGy1Mh4U&t=961s
+// export function sampleFunction(data) {
+//   const rockInfo = data.asteroids
+//   .reduce((acc, year) => {
+//     return { ...acc, [year.discoveryYear]: (acc[year.discoveryYear] || 0) + 1};
+//     },{});
+// }
+
+ 
+
+
+
+
+
+
+
+
 
 
 
