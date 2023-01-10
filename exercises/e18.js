@@ -17,14 +17,14 @@ export function getGreatestDiscoveryYear(data) {
     return acc;
   }, {});
 
-  function maxBy(array, callback) {                  // create a function call maxBy with two parameters
+  function maxBy(array) {                  // create a function call maxBy with two parameters
     let max = array[0];                        // assign max to the first index in the array
     for(let i = 0; i < array.length; i++) {    // iterate through the length of the array
-      if(callback(array[i]) > callback(max)){              // if the discovery year
+      if((array[i]) > (max)){              // if the discovery year
         max = array[i]
       }
     }
-    return maxBy(rockInfo, (year) => year.discoveryYear);
+    return maxBy(rockInfo);
   }
 }
 
