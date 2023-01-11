@@ -1,4 +1,6 @@
+import { maxBy } from "./e17";
 import { data } from "../data/data";
+
 
 // SPACE DATA EXERCISE 16
 // Return the year with the greatest number of Asteroids discoveries
@@ -15,18 +17,12 @@ export function getGreatestDiscoveryYear(data) {
       acc[asteroid.discoveryYear] = 1;
     }
     return acc;
-  }, {});
+  }, []);
 
-  function maxBy(array) {                  // create a function call maxBy with two parameters
-    let max = array[0];                        // assign max to the first index in the array
-    for(let i = 0; i < array.length; i++) {    // iterate through the length of the array
-      if((array[i]) > (max)){              // if the discovery year
-        max = array[i]
-      }
-    }
-    return maxBy(rockInfo);
-  }
-}
+    let [largestKey] = (maxBy(Object.entries(rockInfo), ([key, value]) => value ));
+    return Number(largestKey)
+  } 
+
 
 
 // source: https://www.youtube.com/watch?v=NiLUGy1Mh4U&t=961s
